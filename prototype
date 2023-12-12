@@ -1,0 +1,27 @@
+def ajuster_taux_directeur(taux_directeur, objectif_inflation, objectif_chomage, inflation, croissance, chomage):
+    if inflation > objectif_inflation:
+        taux_directeur += 0.25
+        print("Inflation élevée. Augmentation du taux directeur.")
+    elif croissance < 0:
+        taux_directeur -= 0.25
+        print("Croissance négative. Diminution du taux directeur.")
+    elif chomage > objectif_chomage:
+        taux_directeur -= 0.25
+        print("Chômage élevé. Diminution du taux directeur.")
+    else:
+        print("Situation stable. Aucun ajustement du taux directeur.")
+
+    print(f"Taux Directeur actuel : {taux_directeur}")
+
+# Exemple d'utilisation
+taux_directeur_initial = 1.5
+objectif_inflation = 2.0
+objectif_chomage = 5.0
+
+# Simuler des conditions économiques
+inflation_actuelle = 2.5
+croissance_actuelle = 1.8
+chomage_actuel = 6.0
+
+# Ajuster les taux directeurs en fonction des conditions économiques
+ajuster_taux_directeur(taux_directeur_initial, objectif_inflation, objectif_chomage, inflation_actuelle, croissance_actuelle, chomage_actuel)
